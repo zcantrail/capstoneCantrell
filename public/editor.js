@@ -41,7 +41,7 @@ function updateMenuItem (itype,name,price,abv,desc) {
             return;
         }
         //
-        sqlreq.query("update food set itype = '"+itype+"', name = '"+name+"', price = '"+price+"', abv = '"+abv+"', description = '"+desc+"'"), function () {
+        sqlreq.query("update food set itype = '"+itype+"', name = '"+name+"', price = '"+price+"', abv = '"+abv+"', description = '"+desc+"' where itype = '"+itype+"', name = '"+name+"'"), function () {
             console.log('OK')
         };
     })

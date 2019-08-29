@@ -1,5 +1,11 @@
 Welcome to Zachary Cantrells capstone project.
 
+Get the newest version from get hub STEP 1!
+In terminal
+navigate to the folder you want to download the project files to, and run this code:
+
+git clone https://github.com/zcantrail/capstoneCantrell.git
+
 This file is here to help whom ever may be looking through this code.
 
 This website is built in nodejs therefore you will need to have this installed, but do not worry it is pretty easy.
