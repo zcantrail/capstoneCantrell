@@ -1,3 +1,5 @@
+***If there is a node_modules folder present it may help to delete the folder before running the npm install command***
+
 Welcome to Zachary Cantrells capstone project.
 
 Get the newest version from get hub STEP 1!
