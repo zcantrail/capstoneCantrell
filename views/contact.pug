@@ -1,0 +1,45 @@
+doctype html
+html
+  head
+    title #{title}
+    link(rel='stylesheet', href='/css/Index.css')
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    style(type="text/css").
+        iframe {
+            height: 600px;
+            width: 100%;
+            border: 3px solid transparent;
+            padding: 3px;
+            margin-top: 60px;
+        }
+        a {
+            color: White;
+            text-shadow: 1px 1px black;
+        }
+        body {
+            background-image: url("Images/wood.jpg");
+            background-size: auto;
+        }
+        p {
+            color: white;
+            text-shadow: 1px 1px black;
+            font-style: oblique;
+            font-weight: bold;
+            text-align: center;
+            font-size: 20px;
+        }
+        .menuContainer {
+            border: 3px transparent;
+        }
+  body
+    include navbar
+    div.menuContainer
+        p. 
+            Address: <br/>
+            32 North Cedar Ave. Cookeville TN, 38501 <br/>
+            Phone Number: <br/>
+            (931) 854-9484 <br/>
+            Email address: <br/>
+            fathertom@fathertomspub.com
+
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3221.057898507883!2d-85.51015008320839!3d36.16514568008432!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88672210fa7770cf%3A0x7d3014accc849e8f!2sFather+Tom&#39;s+Pub!5e0!3m2!1sen!2sus!4v1566576308807!5m2!1sen!2sus" width="600" height="600" frameborder="0" style="border:0" allowfullscreen></iframe>

@@ -1,0 +1,21 @@
+doctype html
+html
+  head
+    title #{title}
+    link(rel='stylesheet', href='/css/Index.css')
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    style. 
+        body { 
+            background-image: url("/images/wood.jpg"); 
+            background-size: auto;
+        }
+  body
+    include navbar
+    div.menuContainer.font
+        //pull the data from the json object and put it onto the page
+        each item in tapList
+            div.menuItem. 
+                #{item.name} <br/>
+                #{item.price} <br/>
+                #{item.abv} <br/>
+                #{item.description}

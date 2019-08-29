@@ -1,0 +1,67 @@
+doctype html
+html
+  head
+    link(rel='stylesheet', href='/css/Index.css')
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    script(src='public/editor.js')
+    style. 
+      body { 
+        background-image: url("/images/wood.jpg"); 
+        background-size: auto;
+      }
+  body
+    nav.navBar
+        li 
+            a(href="http://localhost:7000") Home
+        li 
+            a(href="http://localhost:7000/tapList") Tap List
+        li 
+            a(href="http://localhost:7000/editor/lunch") Lunch Menu
+        li 
+            a(href="http://localhost:7000/dinnerM") Dinner Menu
+        li 
+            a(href="http://localhost:7000/contact") Contact Us
+        li
+            img(src="Images/logo.png", alt="")
+        div.hours 
+            p Hours:<br/> Tuesday - Saterday: 11am - 12am
+        div.socialmedia
+            a(href="https://www.zomato.com/cookeville-tn/father-toms-pub-cookeville") 
+                img(src="Images/socialmedia/zomato.png", alt="Zomato")
+            a(href="https://twitter.com/FatherTomsPub") 
+                img(src="Images/socialmedia/twitter.png", alt="Twitter")
+            a(href="https://untappd.com/v/father-toms-pub/341119")
+                img(src="Images/socialmedia/untapped.png", alt="UnTapped")
+            a(href="https://www.yelp.com/biz/father-toms-pub-cookeville")
+                img(src="Images/socialmedia/yelp.png", alt="Yelp")
+            a(href="https://www.facebook.com/FatherTomsPub/")
+                img(src="Images/socialmedia/fBook.png", alt="Facebook")
+            
+            a(style="height: 14px; width: 14px;" href="http://localhost:7000/editor")
+                img(src="Images/beard.png", alt="AdminPage")
+      
+    div.menuContainer.font
+      h3 The food
+      each food in allfood
+        div.menuItem.
+          #{food.name} <br/>
+          #{food.price} <br/>
+          #{food.description} <br/>
+        div.selectorItem
+          button(id="addItemBtn" onclick="") edit
+          button(id="addItemBtn" onclick="") delete
+      <br/>
+      <br/>
+      div.selectorItem
+        p Item Type *required*<br/>
+        input(type="text", id="iType", name="iType")
+        p Item name *required*<br/>
+        input(type="text", id="name", name="Name")
+        p Item price *optional*<br/>
+        input(type="text", id="price", name="Price")
+        p Item ABV *optional*<br/>
+        input(type="text", id="desc", name="ABV")
+        p Item description *optional*<br/>
+        input(type="text", id="desc", name="Desc")
+
+        button(id="addItemBtn" onclick="updateMenuItem("+$document.getElementById('iType').value+","+$document.getElementById('name').value+","+$document.getElementById('Price').value+","+$document.getElementById('ABV').value+","+$document.getElementById('Desc').value+")") add

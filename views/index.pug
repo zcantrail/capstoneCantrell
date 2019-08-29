@@ -1,0 +1,36 @@
+doctype html
+html
+  head
+    title #{title}
+    link(rel='stylesheet', href='/css/Index.css')
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    style. 
+        body { 
+            background-image: url("/images/wood.jpg"); 
+            background-size: auto;
+        }
+  body
+    include navbar
+    div.menuContainer.font
+        // iType is a field in the database that tells what type of menu item it is. E = Event, dsp = Dinner Special, lsp = Lunch Special. The 'if' statements separate the data.
+        h3 Upcoming events
+        each item in homeText
+            if item.itype === 'E'
+                div.menuItem. 
+                    #{item.name} <br/>
+                    #{item.price} <br/>
+                    #{item.description}
+        h3 Dinner Specials
+        each item in homeText
+            if item.itype === 'dsp'
+                div.menuItem. 
+                    #{item.name} <br/>
+                    #{item.price} <br/>
+                    #{item.description}
+        h3 Lunch Specials
+        each item in homeText
+            if item.itype === 'lsp'
+                div.menuItem. 
+                    #{item.name} <br/>
+                    #{item.price} <br/>
+                    #{item.description}

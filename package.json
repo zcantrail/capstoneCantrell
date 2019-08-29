@@ -1,0 +1,26 @@
+{
+  "name": "capstoneproject-zaccantrell",
+  "version": "1.0.0",
+  "description": "Capstone project By Zachary Cantrell for software, and mobile app development.",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zcantrail/capstoneCantrell.git"
+  },
+  "author": "Zachary Cantrell",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zcantrail/capstoneCantrell/issues"
+  },
+  "homepage": "https://github.com/zcantrail/capstoneCantrell#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "jsonfile": "^5.0.0",
+    "mssql": "^5.1.0",
+    "nodemon": "^1.19.1",
+    "pug": "^2.0.4"
+  }
+}

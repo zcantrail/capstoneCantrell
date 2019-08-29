@@ -1,0 +1,38 @@
+doctype html
+html
+  head
+    title #{title}
+    link(rel='stylesheet', href='/css/Index.css')
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    style. 
+        body { 
+            background-image: url("/images/wood.jpg"); 
+            background-size: auto;
+        }
+  body
+    include navbar
+    div.menuContainer.font
+        // iType is a field in the database that tells what type of menu item it is. le = Lunch Entree, lss = Lunch Soup Salad, ls = Lunch Side. The 'if' statements separate the data.
+        h3 Entrees
+        each item in lunch
+            if item.itype === 'le'
+                div.menuItem. 
+                    #{item.name} <br/>
+                    #{item.price} <br/>
+                    #{item.description}
+        h3 Soups and Salads
+        each item in lunch
+            if item.itype === 'lss'
+                div.menuItem. 
+                    #{item.name} <br/>
+                    #{item.price} <br/>
+                    #{item.description}
+        h3 Sides
+        each item in lunch
+            if item.itype === 'ls'
+                div.menuItem. 
+                    #{item.name} <br/>
+                    #{item.price} <br/>
+                    #{item.description}
+        div.disclamer
+            h6 Consuming raw or undercooked meats, poultry, seafood, shellfish or eggs may increase your risk of food borne illness Please Notify Your Server Of Any Food Allergies

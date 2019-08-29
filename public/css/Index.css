@@ -1,0 +1,163 @@
+/*Body bacground*/
+body{
+  background-image: url("Images/wood.jpg");
+  background-size: auto;
+}
+/*Navigation bar styling*/
+.navBar {
+  height: 100%;
+  width: 20%;
+  position: fixed;
+  overflow: auto;
+  background: black;
+  opacity: .8;
+  /*makes the black bar slightly transparent*/
+}
+
+.navBar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 20%;
+  height: 100%;
+  /* Full height */
+  position: fixed;
+  /* Make it stick, even on scroll */
+  overflow: auto;
+  /* Enable scrolling if the sidenav has too much content */
+  opacity: 1;
+  /*resets the opacity*/
+}
+
+.navBar li a {
+  display: block;
+  color: white;
+  background: transparent;
+  text-shadow: 1px 1px black;
+  /*makes letters more visible*/
+  padding: 8px 16px;
+  text-decoration: none;
+  /*removes the underlining*/
+  margin-bottom: 30px;
+  opacity: 1;
+  /*resets the opacity*/
+  border: 1px solid transparent;
+}
+
+.navBar li a.active {
+  /*changes the background and text color when activated*/
+  background-color: #4CAF50;
+  color: white;
+}
+
+.navBar li a:hover:not(.active) {
+  /*changes properties when moused over*/
+  border: 1px solid #806000;
+  color: white;
+}
+
+.navBar img {
+  /*puts logo in position*/
+  width: 90%;
+  height: 25%;
+  margin-left: 13px;
+  margin-top: 50px;
+  opacity: 1;
+  /*resets the opacity*/
+}
+
+.menuContainer {
+  /*large container used on tap list, lunch, dinner, and contact page*/
+  height: 100%;
+  width: 75%;
+  margin-left: 23%;
+  /*compensate for the menu bar that is always there*/
+  margin-right: 3%;
+  margin-bottom: 3px;
+  border: 3px solid #806000;
+  /*a border only used in the menus*/
+  padding: 3px;
+}
+.menuContainer p {
+  font-size: 20px;
+  padding: 13px;
+  text-align: center;
+  text-shadow: 1px 1px black;
+  color: white;
+  margin: auto;
+  font-family: 'foodFont';
+  font-weight: bold;
+}
+.menuContainer h3 {
+    color: #ffff4d;
+    text-shadow: 1px 1px black;
+    text-align: center;
+}
+
+
+.menuItem {
+  /*style editing for individual menu items*/
+  font-size: 20px;
+  padding: 13px;
+  text-align: center;
+  text-shadow: 1px 1px black;
+  color: white;
+  margin: auto;
+  font-family: 'foodFont';
+}
+
+.disclamer {
+  /*consuming raw meat warning at the bottom of each menu*/
+  text-align: center;
+  color: white;
+  text-shadow: #806000;
+}
+
+.socialmedia img {
+  /*sets position of social media links*/
+  height: 20px;
+  width: 7%;
+  margin: auto;
+  padding: 20px;
+  float: left;
+}
+
+.hours {
+  /*sets font styling for the hours.*/
+  color: white;
+  text-shadow: 1px 1px black;
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+.tapListItem {
+  height: 250px;
+  width: 200px;
+  background-image: url('Images/beard.png');
+  float: left;
+  margin: 10px;
+}
+
+.tapListItem p {
+  color: white;
+  text-shadow: 1px 1px black;
+  font-size: 30px;
+  text-align: center;
+  vertical-align: -100px;
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {
+    font-size: 11px
+  }
+}
+@font-face {
+  font-family: "foodFont";
+  src: url('fonts\Archivo-Narrow\ArchivoNarrow-MediumItalic.ttf');
+  font-weight: bold;
+}
+.font {
+  font-family: "foodFont";
+  font-size: 20px;
+}
