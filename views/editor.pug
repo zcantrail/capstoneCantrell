@@ -3,7 +3,7 @@ html
   head
     link(rel='stylesheet', href='/css/Index.css')
     meta(name="viewport" content="width=device-width, initial-scale=1")
-    script(src='public/editor.js')
+    //script(src='public/editor.js')
     style. 
       body { 
         background-image: url("/images/wood.jpg"); 
@@ -48,8 +48,7 @@ html
           #{food.price} <br/>
           #{food.description} <br/>
         div.selectorItem
-          button(id="addItemBtn" onclick="") edit
-          button(id="deleteItemBtn" onclick="deleteMenuItem(#{food.itype},#{food.name})") delete
+          button(id="deleteItemBtn" onclick="deleteMenuItem(#{this.food.itype},#{this.food.name})") delete
       <br/>
       <br/>
       div.selectorItem
@@ -60,8 +59,52 @@ html
         p Item price *optional*<br/>
         input(type="text", id="price", name="Price")
         p Item ABV *optional*<br/>
-        input(type="text", id="desc", name="ABV")
+        input(type="text", id="abv", name="ABV")
         p Item description *optional*<br/>
         input(type="text", id="desc", name="Desc")
 
-        button(id="addItemBtn" onclick="updateMenuItem("+$document.getElementById('iType').value+","+$document.getElementById('name').value+","+$document.getElementById('Price').value+","+$document.getElementById('ABV').value+","+$document.getElementById('Desc').value+")") add
+        button(id="addItemBtn" onclick="updateMenuItem()") add
+
+<script type="text/javascript">
+
+    function addMenuItem () {
+        //set up connection variables for the sql query
+        var conn = new sql.ConnectionPool(sqlconfig);
+        var sqlreq = new sql.Request(conn);
+
+        var itype = document.getElementById('iType');
+        var name = document.getElementById('name');
+        var price = document.getElementById('price');
+        var abv = document.getElementById('abv');
+        var desc = document.getElementById('desc');
+
+        //initiate the connection
+        conn.connect(function (err) {
+            //throw an error if the page cannot connect to the server
+            if (err) {
+                console.log(err);
+                return;
+            }
+            //
+            sqlreq.query("insert into food (itype,name,price,abv,description) values ('"+itype+"','"+name+"','"+price+"','"+abv+"','"+desc+"')")
+            };
+        );
+    };
+
+    function deleteMenuItem (itype,name) {
+        //set up connection variables for the sql query
+        var conn = new sql.ConnectionPool(sqlconfig);
+        var sqlreq = new sql.Request(conn);
+
+        //initiate the connection
+        conn.connect(function (err) {
+            //throw an error if the page cannot connect to the server
+            if (err) {
+                console.log(err);
+                return;
+            }
+            //
+            sqlreq.query("delete from food where itype = '"+itype+"', name = '"+name+"'")
+        });
+    };
+</script>

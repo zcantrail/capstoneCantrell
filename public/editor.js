@@ -22,9 +22,7 @@ function addMenuItem (itype,name,price,abv,desc) {
             return;
         }
         //
-        sqlreq.query("insert into food '"+itype+"','"+name+"','"+price+"','"+abv+"','"+desc+"'"), function () {
-            console.log('OK')
-        };
+        sqlreq.query("insert into food '"+itype+"','"+name+"','"+price+"','"+abv+"','"+desc+"'")
     })
 };
 
